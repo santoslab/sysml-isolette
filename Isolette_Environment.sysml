@@ -74,14 +74,14 @@ package Isolette_Environment {
 	
 	// nursery room that contains room, infant, nurse, and air
 	part def Isolette_Environment :> System {
-		
-		// models heat-loss of incubator to (presumably) cooler room
-		out port heat_loss : DataPort { out :> type : Heat;}
 	}
 	
 	// implementation of Room that contains incubator, infant, nurse, and air
 	part def Isolette_Environment_Normal_Operation :> Isolette_Environment {
 		
+		// models heat-loss of incubator to (presumably) cooler room
+		out port heat_loss : DataPort { out :> type : Heat;}
+
 		// Subcomponents
 		
 		part anIncubator : Isolette::Isolette;
