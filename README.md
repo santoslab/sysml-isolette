@@ -1,3 +1,3 @@
 # sysml-isolette
 
-![arch.png](arch.png)
+![arch.png](arch.svg)
