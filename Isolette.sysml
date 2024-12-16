@@ -287,5 +287,18 @@ package Isolette {
 		out port upper_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
 		out port lower_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
 		out port upper_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+
+		language "GUMBO" /*{
+
+			integration
+			
+				guarantee Table_A_12_LowerAlarmTemp "Range [96..101]
+													|http://pub.santoslab.org/high-assurance/module-requirements/reading/FAA-DoT-Requirements-AR-08-32.pdf#page=112 " :
+					96.0 [f32] <= lower_alarm_tempWstatus.degrees and lower_alarm_tempWstatus.degrees <= 101.0 [f32];
+				
+				guarantee Table_A_12_UpperAlarmTemp "Range [97..102]
+													|http://pub.santoslab.org/high-assurance/module-requirements/reading/FAA-DoT-Requirements-AR-08-32.pdf#page=112 " :
+					97.0 [f32] <= upper_alarm_tempWstatus.degrees and upper_alarm_tempWstatus.degrees <= 102.0 [f32];
+		}*/
 	}
 }
