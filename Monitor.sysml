@@ -4,7 +4,7 @@ package Monitor {
 	private import Isolette_Data_Model::*;
 	private import AADL::*;
 	private import AADL_Project::*;
-    private import AADL_Project::Time_Units::*;
+    private import Time_Units::*;	
 		
 	//A.5.2 Monitor Temperature Function
 	// thread to manage the interactions between with operator interface and the rest
@@ -91,7 +91,7 @@ package Monitor {
 	part def Manage_Monitor_Interface :> Thread {
 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS ====	(see Figure A.5)
 		//  operator specified alarm range
@@ -117,7 +117,7 @@ package Monitor {
 
 			// specification helper function
 			functions
-				def timeout_condition_satisfied():Base_Types::Boolean := T;
+				def timeout_condition_satisfied():Base_Types::Data_Boolean := T;
 
 			integration
 			
@@ -213,7 +213,7 @@ package Monitor {
 	
 	part def Manage_Monitor_Mode :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS ========		
 		// current temperature from temp sensor
@@ -232,7 +232,7 @@ package Monitor {
 				lastMonitorMode: Isolette_Data_Model::Monitor_Mode;
 				
 			functions
-				def timeout_condition_satisfied():Base_Types::Boolean := F;
+				def timeout_condition_satisfied():Base_Types::Data_Boolean := F;
 								
 			//  ======= I n i t i a l i z e    E n t r y    P o i n t    Behavior Constraints  ======
 			initialize
@@ -290,7 +290,7 @@ package Monitor {
 	
 	part def Manage_Alarm :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ======== INPUTS =======
 		// current temperature (from temp sensor)
@@ -310,7 +310,7 @@ package Monitor {
 				lastCmd: Isolette_Data_Model::On_Off;
 
 			functions
-				def timeout_condition_satisfied() : Base_Types::Boolean := T;
+				def timeout_condition_satisfied() : Base_Types::Data_Boolean := T;
 					
 			initialize
   

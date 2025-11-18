@@ -17,7 +17,6 @@ package Isolette_Environment {
 	
     private import AADL::*;
     private import AADL_Project::*;
-    private import AADL_Project::Time_Units::*;
 	
 	// air inside room (make air connections flows?)
 	part def Air :> System {
@@ -57,19 +56,19 @@ package Isolette_Environment {
 	// heat emitted by source to warm air
 	part def Heat :> Data {
 	  // sysml type checking requires all datatypes to be either a record, enum, array or base type
-      part dummyField : Base_Types::Boolean;
+      part dummyField : Base_Types::Data_Boolean;
 	}
 	
 	// data that flows between operator and control panel
 	part def Interface_Interaction :> Data {
 	  // sysml type checking requires all datatypes to be either a record, enum, array or base type
-      part dummyField : Base_Types::Boolean;
+      part dummyField : Base_Types::Data_Boolean;
     }
 	
 	// warming of air by heat source, or of infant by air
 	part def Air_Interaction :> Data {
 	  // sysml type checking requires all datatypes to be either a record, enum, array or base type
-      part dummyField : Base_Types::Boolean;
+      part dummyField : Base_Types::Data_Boolean;
     }
 	
 	// nursery room that contains room, infant, nurse, and air

@@ -7,16 +7,16 @@ package Isolette_Data_Model {
 	private import ScalarValues::*;
 	
 	part def PhysicalTemp :> Data {
-		part degrees : Float_32;
+		part degrees : Data_Float_32;
 	}
 	
 	part def TempWstatus :> Data {
-		part degrees : Float_32;
+		part degrees : Data_Float_32;
 		attribute status : ValueStatus;
 	}
 	
 	part def Temp :> Data {
-		part degrees : Float_32;
+		part degrees : Data_Float_32;
 	}
 	
 	enum def On_Off {
@@ -25,7 +25,7 @@ package Isolette_Data_Model {
 	}
 		
 	part def Failure_Flag :> Data {
-		part flag : Base_Types::Boolean;
+		part flag : Base_Types::Data_Boolean;
 	}
 	
 	enum def ValueStatus {
