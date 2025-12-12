@@ -91,7 +91,7 @@ package Monitor {
 	part def Manage_Monitor_Interface :> Thread {
 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS ====	(see Figure A.5)
 		//  operator specified alarm range

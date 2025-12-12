@@ -5,7 +5,7 @@ package Regulate {
 	private import Isolette_Data_Model::*;
 	private import AADL::*;
 	private import AADL_Project::*;
-    private import AADL_Project::Time_Units::*;
+    private import HAMR::Time_Units::*;
 	
 	// ===========================================================================================================
     //
@@ -104,7 +104,7 @@ package Regulate {
 
 	part def Manage_Regulator_Interface :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS ====	(see Figure A.3)
 	    //  desired temperature from operator interface
@@ -222,7 +222,7 @@ package Regulate {
 
 	part def Manage_Regulator_Mode :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS ========		
   	  	// current temperature from temp sensor
@@ -333,7 +333,7 @@ package Regulate {
 	
 	part def Manage_Heat_Source :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ======== INPUTS =======
 		// current temperature (from temp sensor)
