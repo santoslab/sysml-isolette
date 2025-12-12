@@ -5,7 +5,7 @@ package Devices {
 	private import Isolette_Data_Model::*;
 	private import AADL::*;
     private import AADL_Project::*;
-    private import AADL_Project::Time_Units::*;
+    private import HAMR::Time_Units::*;
     	
 	//device Detect_Regulator_Failure
 	//features
@@ -91,7 +91,7 @@ package Devices {
 		out port current_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 	}
 	
 	//-------------------------------------------------------------------------
@@ -129,7 +129,7 @@ package Devices {
 		out port heat_out : DataPort { out :> type : Isolette_Environment::Heat; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 	}
 	
 	//-------------------------------------------------------------------------
@@ -160,7 +160,7 @@ package Devices {
 		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 	}
 	
 	//-------------------------------------------------------------------------
@@ -191,6 +191,6 @@ package Devices {
 		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 	}
 }

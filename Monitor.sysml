@@ -4,7 +4,7 @@ package Monitor {
 	private import Isolette_Data_Model::*;
 	private import AADL::*;
 	private import AADL_Project::*;
-    private import AADL_Project::Time_Units::*;
+    private import HAMR::Time_Units::*;
 		
 	//A.5.2 Monitor Temperature Function
 	// thread to manage the interactions between with operator interface and the rest
@@ -213,7 +213,7 @@ package Monitor {
 	
 	part def Manage_Monitor_Mode :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS ========		
 		// current temperature from temp sensor
@@ -290,7 +290,7 @@ package Monitor {
 	
 	part def Manage_Alarm :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ======== INPUTS =======
 		// current temperature (from temp sensor)

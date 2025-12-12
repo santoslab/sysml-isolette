@@ -24,7 +24,7 @@ package Isolette {
 	private import Monitor::*;
 	private import AADL::*;
 	private import AADL_Project::*;
-    private import AADL_Project::Time_Units::*;
+	private import HAMR::Time_Units::*;
     
 	// top-level system component representing the Isolette
 	part def Isolette :> System {
@@ -274,7 +274,7 @@ package Isolette {
 	
 	part def Operator_Interface_Thread :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS from thermostat to operator interface
 		in port regulator_status : DataPort { in :> type : Isolette_Data_Model::Status; }
