@@ -3,10 +3,8 @@
 package Devices {
 	
 	private import Isolette_Data_Model::*;
-	private import AADL::*;
-    private import AADL_Project::*;
-    private import HAMR::Time_Units::*;
-    	
+	private import HAMR::*;
+
 	//device Detect_Regulator_Failure
 	//features
 	//  internal_failure : out data port Isolette_Data_Model::Failure_Flag.impl;
@@ -55,8 +53,8 @@ package Devices {
 	//-------------------------------------------------------------------------
 	part def Temperature_Sensor_System :> System {
 		
-		in port air : DataPort { in :> type : Isolette_Data_Model::PhysicalTemp; }
-		out port current_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+		in port air : DataPort { in :>> type : Isolette_Data_Model::PhysicalTemp; }
+		out port current_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
 		
 		part cpi : Temperature_Sensor_Process;
 		
@@ -68,8 +66,8 @@ package Devices {
 	
 	part def Temperature_Sensor_Process :> Process {
 		
-		in port air : DataPort { in :> type : Isolette_Data_Model::PhysicalTemp; }
-		out port current_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+		in port air : DataPort { in :>> type : Isolette_Data_Model::PhysicalTemp; }
+		out port current_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
 		
 		part thermostat : Temperature_Sensor;
 		
@@ -87,8 +85,8 @@ package Devices {
 		//	Stack_Size = Isolette_Properties::StackSize;
 		//}
 		
-		in port air : DataPort { in :> type : Isolette_Data_Model::PhysicalTemp; }
-		out port current_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+		in port air : DataPort { in :>> type : Isolette_Data_Model::PhysicalTemp; }
+		out port current_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
@@ -99,8 +97,8 @@ package Devices {
 	//-------------------------------------------------------------------------
 	part def Heat_Source_System :> System {
 		
-		in port heat_control : DataPort { in :> type : Isolette_Data_Model::On_Off; }
-		out port heat_out : DataPort { out :> type : Isolette_Environment::Heat; }
+		in port heat_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
+		out port heat_out : DataPort { out :>> type : Isolette_Environment::Heat; }
 		
 		part cpi : Heat_Source_Process;
 		
@@ -112,8 +110,8 @@ package Devices {
 	
 	part def Heat_Source_Process :> Process {
 		
-		in port heat_control : DataPort { in :> type : Isolette_Data_Model::On_Off; }
-		out port heat_out : DataPort { out :> type : Isolette_Environment::Heat; }
+		in port heat_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
+		out port heat_out : DataPort { out :>> type : Isolette_Environment::Heat; }
 		
 		part heat_controller : Heat_Source;
 		
@@ -125,8 +123,8 @@ package Devices {
 	
 	part def Heat_Source :>  Thread {
 		
-		in port heat_control : DataPort { in :> type : Isolette_Data_Model::On_Off; }
-		out port heat_out : DataPort { out :> type : Isolette_Environment::Heat; }
+		in port heat_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
+		out port heat_out : DataPort { out :>> type : Isolette_Environment::Heat; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
@@ -137,7 +135,7 @@ package Devices {
 	//-------------------------------------------------------------------------
 	part def Detect_Regulator_Failure_System :> System {
 		
-		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port internal_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 		
 		part p : Detect_Regulator_Failure_Process;
 		
@@ -147,7 +145,7 @@ package Devices {
 	
 	part def Detect_Regulator_Failure_Process :> Process{
 		
-		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port internal_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 		
 		part detect_regulator_failure_thread : Detect_Regulator_Failure;
 		
@@ -157,7 +155,7 @@ package Devices {
 	
 	part def Detect_Regulator_Failure :> Thread {
 		
-		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port internal_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
@@ -168,7 +166,7 @@ package Devices {
 	//-------------------------------------------------------------------------
 	part def Detect_Monitor_Failure_System :> System {
 		
-		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port internal_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 		
 		part p : Detect_Monitor_Failure_Process;
 		
@@ -178,7 +176,7 @@ package Devices {
 	
 	part def Detect_Monitor_Failure_Process :> Process {
 		
-		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port internal_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 		
 		part monitor_failure_thread : Detect_Monitor_Failure;
 		
@@ -188,7 +186,7 @@ package Devices {
 	
 	part def Detect_Monitor_Failure :> Thread {
 		
-		out port internal_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port internal_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];

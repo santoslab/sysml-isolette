@@ -22,10 +22,8 @@ package Isolette {
 	private import Isolette_Data_Model::*;
 	private import Regulate::*;
 	private import Monitor::*;
-	private import AADL::*;
-	private import AADL_Project::*;
-	private import HAMR::Time_Units::*;
-    
+	private import HAMR::*;
+
 	// top-level system component representing the Isolette
 	part def Isolette :> System {
 		
@@ -46,15 +44,15 @@ package Isolette {
 		// Ports
 		
 		// models (abstractly) warming of air inside of Isolette enclosure
-		out port heat_out : DataPort { out :> type : Isolette_Environment::Heat; }
+		out port heat_out : DataPort { out :>> type : Isolette_Environment::Heat; }
 		// models (abstractly) commands given by the operator to Isolette operator interface
-		in port operator_commands : DataPort { in :> type : Isolette_Environment::Interface_Interaction; }
+		in port operator_commands : DataPort { in :>> type : Isolette_Environment::Interface_Interaction; }
 		// models (abstractly) visual information presented to the operator on Isolette operator interface
-		out port operator_visual_information : DataPort { out :> type : Isolette_Environment::Interface_Interaction; }
+		out port operator_visual_information : DataPort { out :>> type : Isolette_Environment::Interface_Interaction; }
 		// models (abstraction) audio information presented to the operator on Isolette operator interface
-		out port operator_alarm : DataPort { out :> type : Isolette_Environment::Interface_Interaction; }
+		out port operator_alarm : DataPort { out :>> type : Isolette_Environment::Interface_Interaction; }
 		// models (abstractly) the sensing of the physical air temperature
-		in port air_temperature : DataPort { in :> type : Isolette_Data_Model::PhysicalTemp; }
+		in port air_temperature : DataPort { in :>> type : Isolette_Data_Model::PhysicalTemp; }
 		
 		// Connections
 		
@@ -131,22 +129,22 @@ package Isolette {
 		
 		// ======== INPUTS =======
 		// receive current temperature (with status info) from temp sensor
-		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// receive desired temperature range (with status info) from operator interface
-		in port lower_desired_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
-		in port upper_desired_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port lower_desired_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
+		in port upper_desired_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// receive alarm temperature range (with status info) from operator interface
-		in port lower_alarm_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
-		in port upper_alarm_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port lower_alarm_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
+		in port upper_alarm_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 
 		// ======== OUTPUTS =========
 		// send heat control command to heat source 
-		out port heat_control: DataPort  { out :> type : Isolette_Data_Model::On_Off; }
+		out port heat_control: DataPort  { out :>> type : Isolette_Data_Model::On_Off; }
 		// send information to operator interface
-		out port regulator_status : DataPort { out :> type : Isolette_Data_Model::Status; }
-		out port monitor_status : DataPort { out :> type : Isolette_Data_Model::Status; }
-		out port display_temperature : DataPort { out :> type : Isolette_Data_Model::Temp; }
-		out port alarm_control : DataPort { out :> type : Isolette_Data_Model::On_Off; }
+		out port regulator_status : DataPort { out :>> type : Isolette_Data_Model::Status; }
+		out port monitor_status : DataPort { out :>> type : Isolette_Data_Model::Status; }
+		out port display_temperature : DataPort { out :>> type : Isolette_Data_Model::Temp; }
+		out port alarm_control : DataPort { out :>> type : Isolette_Data_Model::On_Off; }
 		
 		part regulate_temperature : Regulate::Regulate_Temperature;
 		part monitor_temperature : Monitor::Monitor_Temperature;
@@ -197,24 +195,24 @@ package Isolette {
 	part def Operator_Interface :> System {
 		
 		// ======== INPUT from Operator to Operator Interface =======		
-		in port operator_commands : DataPort { in :> type : Isolette_Environment::Interface_Interaction; }
+		in port operator_commands : DataPort { in :>> type : Isolette_Environment::Interface_Interaction; }
 		// ======== OUTPUT from Operator Interface to Operator  =======	
 		// models (abstractly) visual information presented to the operator on Isolette operator interface
-		out port operator_visual_information : DataPort { out :> type : Isolette_Environment::Interface_Interaction; }
+		out port operator_visual_information : DataPort { out :>> type : Isolette_Environment::Interface_Interaction; }
 		// models (abstraction) audio information presented to the operator on Isolette operator interface
-		out port operator_alarm : DataPort { out :> type : Isolette_Environment::Interface_Interaction; }
+		out port operator_alarm : DataPort { out :>> type : Isolette_Environment::Interface_Interaction; }
 		// models (abstractly) the sensing of the physical air temperature
 		// ==== INPUTS from thermostat to operator interface 
-		in port regulator_status : DataPort { in :> type : Isolette_Data_Model::Status; }
-		in port monitor_status : DataPort { in :> type : Isolette_Data_Model::Status; }
-		in port display_temperature : DataPort { in :> type : Isolette_Data_Model::Temp; }
-		in port alarm_control : DataPort { in :> type : Isolette_Data_Model::On_Off; }
+		in port regulator_status : DataPort { in :>> type : Isolette_Data_Model::Status; }
+		in port monitor_status : DataPort { in :>> type : Isolette_Data_Model::Status; }
+		in port display_temperature : DataPort { in :>> type : Isolette_Data_Model::Temp; }
+		in port alarm_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
 
 		// ==== OUTPUTS from operator interface to thermostat 
-		out port lower_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port upper_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port lower_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port upper_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+		out port lower_desired_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port upper_desired_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port lower_alarm_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port upper_alarm_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
 		
 		part oip : Operator_Interface_Process;
 		
@@ -240,16 +238,16 @@ package Isolette {
 	part def Operator_Interface_Process :> Process {
 		
 		// ==== INPUTS from thermostat to operator interface
-		in port regulator_status : DataPort { in :> type : Isolette_Data_Model::Status; }
-		in port monitor_status : DataPort { in :> type : Isolette_Data_Model::Status; }
-		in port display_temperature : DataPort { in :> type : Isolette_Data_Model::Temp; }
-		in port alarm_control : DataPort { in :> type : Isolette_Data_Model::On_Off; }
+		in port regulator_status : DataPort { in :>> type : Isolette_Data_Model::Status; }
+		in port monitor_status : DataPort { in :>> type : Isolette_Data_Model::Status; }
+		in port display_temperature : DataPort { in :>> type : Isolette_Data_Model::Temp; }
+		in port alarm_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
 
 		// ==== OUTPUTS from operator interface to thermostat 
-		out port lower_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port upper_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port lower_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port upper_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+		out port lower_desired_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port upper_desired_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port lower_alarm_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port upper_alarm_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
 		
 		part oit : Operator_Interface_Thread;
 		
@@ -277,16 +275,16 @@ package Isolette {
 		attribute :>> Period = 1000 [ms];
 		
 		// ==== INPUTS from thermostat to operator interface
-		in port regulator_status : DataPort { in :> type : Isolette_Data_Model::Status; }
-		in port monitor_status : DataPort { in :> type : Isolette_Data_Model::Status; }
-		in port display_temperature : DataPort { in :> type : Isolette_Data_Model::Temp; }
-		in port alarm_control : DataPort { in :> type : Isolette_Data_Model::On_Off; }
+		in port regulator_status : DataPort { in :>> type : Isolette_Data_Model::Status; }
+		in port monitor_status : DataPort { in :>> type : Isolette_Data_Model::Status; }
+		in port display_temperature : DataPort { in :>> type : Isolette_Data_Model::Temp; }
+		in port alarm_control : DataPort { in :>> type : Isolette_Data_Model::On_Off; }
 
 		// ==== OUTPUTS from operator interface to thermostat 
-		out port lower_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port upper_desired_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port lower_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
-		out port upper_alarm_tempWstatus : DataPort { out :> type : Isolette_Data_Model::TempWstatus; }
+		out port lower_desired_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port upper_desired_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port lower_alarm_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
+		out port upper_alarm_tempWstatus : DataPort { out :>> type : Isolette_Data_Model::TempWstatus; }
 
 		language "GUMBO" /*{
 

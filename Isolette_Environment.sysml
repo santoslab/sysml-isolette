@@ -15,8 +15,7 @@
 
 package Isolette_Environment {
 	
-    private import AADL::*;
-    private import AADL_Project::*;
+    private import HAMR::*;
 	
 	// air inside room (make air connections flows?)
 	part def Air :> System {
@@ -24,15 +23,15 @@ package Isolette_Environment {
 		// Ports
 		
 		// warming of air by heat source
-		in port heat_in : DataPort { in :> type : Heat; }
+		in port heat_in : DataPort { in :>> type : Heat; }
 		// heat-loss of incubator air to room
-		out port heat_out : DataPort { out :> type : Heat; }
+		out port heat_out : DataPort { out :>> type : Heat; }
 		// air contact with infant
 		// TODO: This is currently modeled as an IN/OUT port, which might cause problems
 		// with the EMv2/hazard analysis
-		inout port infant_interaction : DataPort { inout :> type : Air_Interaction; }
+		inout port infant_interaction : DataPort { inout :>> type : Air_Interaction; }
 		//actual air temperature that the sensor measures
-		out port air_temperature : DataPort { out :> type : Isolette_Data_Model::PhysicalTemp; }
+		out port air_temperature : DataPort { out :>> type : Isolette_Data_Model::PhysicalTemp; }
 	}
 	
 	// nurse controlling room
@@ -41,16 +40,16 @@ package Isolette_Environment {
 		// Ports
 		
 		// models (abstractly) visual information presented to the operator on Isolette operator interface
-		in port operator_visual_information : DataPort { in :> type : Interface_Interaction; }
+		in port operator_visual_information : DataPort { in :>> type : Interface_Interaction; }
 		// models (abstraction) audio information presented to the operator on Isolette operator interface
-		in port operator_alarm : DataPort { in :> type : Interface_Interaction; }
+		in port operator_alarm : DataPort { in :>> type : Interface_Interaction; }
 		// models (abstractly) commands given by the operator to Isolette operator interface
-		out port operator_commands : DataPort { out :> type : Interface_Interaction; }
+		out port operator_commands : DataPort { out :>> type : Interface_Interaction; }
 	}
 	
 	// infant in room
 	part def Infant :> Abstract {
-		inout port air_interaction : DataPort { inout :> type : Air_Interaction; }
+		inout port air_interaction : DataPort { inout :>> type : Air_Interaction; }
 	}
 	
 	// heat emitted by source to warm air
@@ -79,7 +78,7 @@ package Isolette_Environment {
 	part def Isolette_Environment_Normal_Operation :> Isolette_Environment {
 		
 		// models heat-loss of incubator to (presumably) cooler room
-		out port heat_loss : DataPort { out :> type : Heat;}
+		out port heat_loss : DataPort { out :>> type : Heat;}
 
 		// Subcomponents
 		

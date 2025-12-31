@@ -2,10 +2,8 @@
 package Monitor {
 	
 	private import Isolette_Data_Model::*;
-	private import AADL::*;
-	private import AADL_Project::*;
-    private import HAMR::Time_Units::*;
-		
+	private import HAMR::*;
+
 	//A.5.2 Monitor Temperature Function
 	// thread to manage the interactions between with operator interface and the rest
     // of the monitor process
@@ -13,16 +11,16 @@ package Monitor {
 		
 		// ===== INPUTs (monitored variables) ...based in part on Figure A.2 and Table A.5 
 	    // value of current temp (with status flag) from air temp sensor
-	    in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+	    in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 	    // operator-specific alarm range for temperature
-	    in port lower_alarm_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
-	    in port upper_alarm_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+	    in port lower_alarm_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
+	    in port upper_alarm_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 	    
 	    // ===== OUTPUTs (controlled variables)  ...based in part on Figure A.2 and Table A.6
 	    // control signal (on/off) to alarm component 
-	    out port alarm_control : DataPort { out :> type : Isolette_Data_Model::On_Off; }
+	    out port alarm_control : DataPort { out :>> type : Isolette_Data_Model::On_Off; }
 	    // enumerated type describing status/mode of monitor (Init, On/operating, or Failed)
-	    out port monitor_status : DataPort { out :> type : Isolette_Data_Model::Status; }
+	    out port monitor_status : DataPort { out :>> type : Isolette_Data_Model::Status; }
 	    
 	    //thread for manage alarm implementation
 	    part manage_alarm : Manage_Alarm;
@@ -95,21 +93,21 @@ package Monitor {
 		
 		// ==== INPUTS ====	(see Figure A.5)
 		//  operator specified alarm range
-		in port upper_alarm_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
-		in port lower_alarm_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port upper_alarm_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
+		in port lower_alarm_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// current temperature from temp sensor
-		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// current mode of monitor subsystem (init, normal or failed)
-		in port monitor_mode : DataPort { in :> type : Isolette_Data_Model::Monitor_Mode; }
+		in port monitor_mode : DataPort { in :>> type : Isolette_Data_Model::Monitor_Mode; }
 		
 		// ==== OUTPUTS ====	(see Figure A.5)  
 		// validated ("valid" status confirmed & removed) alarm temperature range from operator interface
-		out port upper_alarm_temp : DataPort { out :> type : Isolette_Data_Model::Temp; }
-		out port lower_alarm_temp : DataPort { out :> type : Isolette_Data_Model::Temp; }
+		out port upper_alarm_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
+		out port lower_alarm_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
 		// overall status of monitor subsystem sent to operator interface
-	    out port monitor_status : DataPort { out :> type : Isolette_Data_Model::Status; }
+	    out port monitor_status : DataPort { out :>> type : Isolette_Data_Model::Status; }
 	    // flag indicating improper inputs; sent to determine overall subsystem mode 
-		out port interface_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+		out port interface_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 
 		language "GUMBO" /*{
 			state
@@ -217,15 +215,15 @@ package Monitor {
 		
 		// ==== INPUTS ========		
 		// current temperature from temp sensor
-		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// status of operator interface interactions
-		in port interface_failure : DataPort { in :> type : Isolette_Data_Model::Failure_Flag; }
+		in port interface_failure : DataPort { in :>> type : Isolette_Data_Model::Failure_Flag; }
 		// in case of internal failure, a flag is raised
-		in port internal_failure : DataPort { in :> type : Isolette_Data_Model::Failure_Flag; }
+		in port internal_failure : DataPort { in :>> type : Isolette_Data_Model::Failure_Flag; }
 		   
 		// ==== OUTPUTS ========		
 		// mode of regulator (Init, Normal, Failed)   
-		out port monitor_mode : DataPort { out :> type : Isolette_Data_Model::Monitor_Mode; }
+		out port monitor_mode : DataPort { out :>> type : Isolette_Data_Model::Monitor_Mode; }
 		
 		language "GUMBO" /*{
 			state
@@ -294,16 +292,16 @@ package Monitor {
 		
 		// ======== INPUTS =======
 		// current temperature (from temp sensor)
-		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// lowest and upper bound of operator specified alarm temperature range
-		in port lower_alarm_temp : DataPort { in :> type : Isolette_Data_Model::Temp; }
-		in port upper_alarm_temp : DataPort { in :> type : Isolette_Data_Model::Temp; }
+		in port lower_alarm_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
+		in port upper_alarm_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
 		// subsystem mode
-		in port monitor_mode : DataPort { in :> type : Isolette_Data_Model::Monitor_Mode; }
+		in port monitor_mode : DataPort { in :>> type : Isolette_Data_Model::Monitor_Mode; }
 		  
 		// ======== OUTPUTS =======
 		// command to turn alarm on/off (actuation command)  
-		out port alarm_control : DataPort { out :> type : Isolette_Data_Model::On_Off; }
+		out port alarm_control : DataPort { out :>> type : Isolette_Data_Model::On_Off; }
 
 		language "GUMBO" /*{
 			state

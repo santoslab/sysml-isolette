@@ -3,10 +3,8 @@
 package Regulate {
 	
 	private import Isolette_Data_Model::*;
-	private import AADL::*;
-	private import AADL_Project::*;
-    private import HAMR::Time_Units::*;
-	
+	private import HAMR::*;
+
 	// ===========================================================================================================
     //
     //   R e g u l a t e    T e m p e r a t u r e    P r o c e s s
@@ -21,18 +19,18 @@ package Regulate {
 
 		// ===== INPUTs (monitored variables) ...based in part on Figure A.2 and Table A.5 
 		//  desired temperature range from operator interface 		
-		in port lower_desired_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
-		in port upper_desired_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port lower_desired_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
+		in port upper_desired_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		//  actual temperature from temp sensor
-		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		     
 		// ===== OUTPUTs (controlled variables)  ...based in part on Figure A.2 and Table A.6
 		// status of regulate temperature function as reported to operator interface
-		out port regulator_status : DataPort { out :> type : Isolette_Data_Model::Status; }
+		out port regulator_status : DataPort { out :>> type : Isolette_Data_Model::Status; }
 		// value of current temperature to display on operator interface
-		out port displayed_temp : DataPort { out :> type : Isolette_Data_Model::Temp; }
+		out port displayed_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
 		// actuation command to heater
-		out port heat_control : DataPort { out :> type : Isolette_Data_Model::On_Off; }
+		out port heat_control : DataPort { out :>> type : Isolette_Data_Model::On_Off; }
 		
 		//thread to manage the interactions between with operator interface and the rest of the regulator process
 		part manage_regulator_interface : Manage_Regulator_Interface;
@@ -108,23 +106,23 @@ package Regulate {
 		
 		// ==== INPUTS ====	(see Figure A.3)
 	    //  desired temperature from operator interface
-	    in port upper_desired_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
-	    in port lower_desired_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+	    in port upper_desired_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
+	    in port lower_desired_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
   	    // current temperature from temp sensor
-	    in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+	    in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 	    // current mode of regulator subsystem
-	    in port regulator_mode : DataPort { in :> type : Isolette_Data_Model::Regulator_Mode; }
+	    in port regulator_mode : DataPort { in :>> type : Isolette_Data_Model::Regulator_Mode; }
 	  
 	    // ==== OUTPUTS ====	(see Figure A.3)
 	    // validated ("valid" status confirmed) desired temperature range from operator interface
-	    out port upper_desired_temp : DataPort { out :> type : Isolette_Data_Model::Temp; }
-	    out port lower_desired_temp : DataPort { out :> type : Isolette_Data_Model::Temp; }
+	    out port upper_desired_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
+	    out port lower_desired_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
 	    // current temperature to display on operator interface
-	    out port displayed_temp : DataPort { out :> type : Isolette_Data_Model::Temp; }
+	    out port displayed_temp : DataPort { out :>> type : Isolette_Data_Model::Temp; }
 	    // overall status of regulator subsystem sent to operator interface
-	    out port regulator_status : DataPort { out :> type : Isolette_Data_Model::Status; }
+	    out port regulator_status : DataPort { out :>> type : Isolette_Data_Model::Status; }
 	    // flag indicating improper inputs; sent to determine overall subsystem mode 
-	    out port interface_failure : DataPort { out :> type : Isolette_Data_Model::Failure_Flag; }
+	    out port interface_failure : DataPort { out :>> type : Isolette_Data_Model::Failure_Flag; }
 
 		language "GUMBO" /*{
 			// specification helper function
@@ -226,15 +224,15 @@ package Regulate {
 		
 		// ==== INPUTS ========		
   	  	// current temperature from temp sensor
-  		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+  		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
   		// status of operator interface interactions
-  		in port interface_failure : DataPort { in :> type : Isolette_Data_Model::Failure_Flag; }
+  		in port interface_failure : DataPort { in :>> type : Isolette_Data_Model::Failure_Flag; }
   		// internal status of regulator
-  		in port internal_failure : DataPort { in :> type : Isolette_Data_Model::Failure_Flag; }
+  		in port internal_failure : DataPort { in :>> type : Isolette_Data_Model::Failure_Flag; }
   
   		// ==== OUTPUTS ========		
   		// mode of regulator (Init, Normal, Failed)
-  		out port regulator_mode : DataPort { out :> type : Isolette_Data_Model::Regulator_Mode; }
+  		out port regulator_mode : DataPort { out :>> type : Isolette_Data_Model::Regulator_Mode; }
 
 		language "GUMBO" /*{
 			// indicate that the component maintains an internal state (variables) that influence it's behavior
@@ -337,16 +335,16 @@ package Regulate {
 		
 		// ======== INPUTS =======
 		// current temperature (from temp sensor)
-		in port current_tempWstatus : DataPort { in :> type : Isolette_Data_Model::TempWstatus; }
+		in port current_tempWstatus : DataPort { in :>> type : Isolette_Data_Model::TempWstatus; }
 		// lowest and upper bound of desired temperature range
- 		in port lower_desired_temp : DataPort { in :> type : Isolette_Data_Model::Temp; }
-		in port upper_desired_temp : DataPort { in :> type : Isolette_Data_Model::Temp; }
+ 		in port lower_desired_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
+		in port upper_desired_temp : DataPort { in :>> type : Isolette_Data_Model::Temp; }
 		// subsystem mode 
- 		in port regulator_mode : DataPort { in :> type : Isolette_Data_Model::Regulator_Mode; }
+ 		in port regulator_mode : DataPort { in :>> type : Isolette_Data_Model::Regulator_Mode; }
     
 		// ======== OUTPUTS =======
 		// command to turn heater on/off (actuation command)
-  		out port heat_control : DataPort { out :> type : Isolette_Data_Model::On_Off; }
+  		out port heat_control : DataPort { out :>> type : Isolette_Data_Model::On_Off; }
   		
 		language "GUMBO" /*{
 			// indicate that the component maintains an internal state (variables) that influence its behavior
