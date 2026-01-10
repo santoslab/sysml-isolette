@@ -1,0 +1,19 @@
+System Root: Isolette_Environment_Normal_Operation_Instance [[/Isolette_Environment.sysml, 78, 1]]
+
+Connection Instance: Isolette_Environment_Normal_Operation_Instance.anIncubator.operator_interface.oip.oit.lower_alarm_tempWstatus -> Isolette_Environment_Normal_Operation_Instance.anIncubator.thermostat.monitor_temperature.manage_monitor_interface.lower_alarm_tempWstatus
+
+  Connection References: [Isolette_Environment_Normal_Operation_Instance.anIncubator.operator_interface.oip.c7, [/Isolette.sysml, 267, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.operator_interface.c7, [/Isolette.sysml, 232, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.lat, [/Isolette.sysml, 94, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.thermostat.tlat, [/Isolette.sysml, 166, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.thermostat.monitor_temperature.mlat, [/Monitor.sysml, 37, 5]]
+
+   96.0f <= lower_alarm_tempWstatus.degrees &&
+     lower_alarm_tempWstatus.degrees <= 101.0f __>:
+     96.0f <= lower_alarm_tempWstatus.degrees &&
+       lower_alarm_tempWstatus.degrees <= 101.0f
+
+Connection Instance: Isolette_Environment_Normal_Operation_Instance.anIncubator.operator_interface.oip.oit.upper_alarm_tempWstatus -> Isolette_Environment_Normal_Operation_Instance.anIncubator.thermostat.monitor_temperature.manage_monitor_interface.upper_alarm_tempWstatus
+
+  Connection References: [Isolette_Environment_Normal_Operation_Instance.anIncubator.operator_interface.oip.c8, [/Isolette.sysml, 269, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.operator_interface.c8, [/Isolette.sysml, 234, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.uat, [/Isolette.sysml, 96, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.thermostat.tuat, [/Isolette.sysml, 164, 2]] -> [Isolette_Environment_Normal_Operation_Instance.anIncubator.thermostat.monitor_temperature.muat, [/Monitor.sysml, 35, 5]]
+
+   97.0f <= upper_alarm_tempWstatus.degrees &&
+     upper_alarm_tempWstatus.degrees <= 102.0f __>:
+     97.0f <= upper_alarm_tempWstatus.degrees &&
+       upper_alarm_tempWstatus.degrees <= 102.0f

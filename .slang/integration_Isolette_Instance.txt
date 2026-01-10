@@ -1,0 +1,19 @@
+System Root: Isolette_Instance [[/Isolette.sysml, 28, 1]]
+
+Connection Instance: Isolette_Instance.operator_interface.oip.oit.lower_alarm_tempWstatus -> Isolette_Instance.thermostat.monitor_temperature.manage_monitor_interface.lower_alarm_tempWstatus
+
+  Connection References: [Isolette_Instance.operator_interface.oip.c7, [/Isolette.sysml, 267, 2]] -> [Isolette_Instance.operator_interface.c7, [/Isolette.sysml, 232, 2]] -> [Isolette_Instance.lat, [/Isolette.sysml, 94, 2]] -> [Isolette_Instance.thermostat.tlat, [/Isolette.sysml, 166, 2]] -> [Isolette_Instance.thermostat.monitor_temperature.mlat, [/Monitor.sysml, 37, 5]]
+
+   96.0f <= lower_alarm_tempWstatus.degrees &&
+     lower_alarm_tempWstatus.degrees <= 101.0f __>:
+     96.0f <= lower_alarm_tempWstatus.degrees &&
+       lower_alarm_tempWstatus.degrees <= 101.0f
+
+Connection Instance: Isolette_Instance.operator_interface.oip.oit.upper_alarm_tempWstatus -> Isolette_Instance.thermostat.monitor_temperature.manage_monitor_interface.upper_alarm_tempWstatus
+
+  Connection References: [Isolette_Instance.operator_interface.oip.c8, [/Isolette.sysml, 269, 2]] -> [Isolette_Instance.operator_interface.c8, [/Isolette.sysml, 234, 2]] -> [Isolette_Instance.uat, [/Isolette.sysml, 96, 2]] -> [Isolette_Instance.thermostat.tuat, [/Isolette.sysml, 164, 2]] -> [Isolette_Instance.thermostat.monitor_temperature.muat, [/Monitor.sysml, 35, 5]]
+
+   97.0f <= upper_alarm_tempWstatus.degrees &&
+     upper_alarm_tempWstatus.degrees <= 102.0f __>:
+     97.0f <= upper_alarm_tempWstatus.degrees &&
+       upper_alarm_tempWstatus.degrees <= 102.0f
