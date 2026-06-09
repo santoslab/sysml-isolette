@@ -32169,12 +32169,34 @@
                                     "left" : {
                                       "type" : "org.sireum.lang.ast.Exp.Binary",
                                       "left" : {
-                                        "type" : "org.sireum.lang.ast.Exp.Ident",
-                                        "id" : {
-                                          "type" : "org.sireum.lang.ast.Id",
-                                          "value" : "monitor_mode",
+                                        "type" : "org.sireum.lang.ast.Exp.Binary",
+                                        "left" : {
+                                          "type" : "org.sireum.lang.ast.Exp.Ident",
+                                          "id" : {
+                                            "type" : "org.sireum.lang.ast.Id",
+                                            "value" : "monitor_mode",
+                                            "attr" : {
+                                              "type" : "org.sireum.lang.ast.Attr",
+                                              "posOpt" : {
+                                                "type" : "Some",
+                                                "value" : {
+                                                  "type" : "Position",
+                                                  "uriOpt" : {
+                                                    "type" : "Some",
+                                                    "value" : "\/Monitor.sysml"
+                                                  },
+                                                  "beginLine" : 381,
+                                                  "beginColumn" : 13,
+                                                  "endLine" : 381,
+                                                  "endColumn" : 24,
+                                                  "offset" : 19522,
+                                                  "length" : 12
+                                                }
+                                              }
+                                            }
+                                          },
                                           "attr" : {
-                                            "type" : "org.sireum.lang.ast.Attr",
+                                            "type" : "org.sireum.lang.ast.ResolvedAttr",
                                             "posOpt" : {
                                               "type" : "Some",
                                               "value" : {
@@ -32190,6 +32212,176 @@
                                                 "offset" : 19522,
                                                 "length" : 12
                                               }
+                                            },
+                                            "resOpt" : {
+                                              "type" : "None"
+                                            },
+                                            "typedOpt" : {
+                                              "type" : "None"
+                                            }
+                                          }
+                                        },
+                                        "op" : "==",
+                                        "right" : {
+                                          "type" : "org.sireum.lang.ast.Exp.Select",
+                                          "receiverOpt" : {
+                                            "type" : "Some",
+                                            "value" : {
+                                              "type" : "org.sireum.lang.ast.Exp.Select",
+                                              "receiverOpt" : {
+                                                "type" : "Some",
+                                                "value" : {
+                                                  "type" : "org.sireum.lang.ast.Exp.Ident",
+                                                  "id" : {
+                                                    "type" : "org.sireum.lang.ast.Id",
+                                                    "value" : "Isolette_Data_Model",
+                                                    "attr" : {
+                                                      "type" : "org.sireum.lang.ast.Attr",
+                                                      "posOpt" : {
+                                                        "type" : "Some",
+                                                        "value" : {
+                                                          "type" : "Position",
+                                                          "uriOpt" : {
+                                                            "type" : "Some",
+                                                            "value" : "\/Monitor.sysml"
+                                                          },
+                                                          "beginLine" : 381,
+                                                          "beginColumn" : 29,
+                                                          "endLine" : 381,
+                                                          "endColumn" : 47,
+                                                          "offset" : 19538,
+                                                          "length" : 19
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "attr" : {
+                                                    "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                                    "posOpt" : {
+                                                      "type" : "Some",
+                                                      "value" : {
+                                                        "type" : "Position",
+                                                        "uriOpt" : {
+                                                          "type" : "Some",
+                                                          "value" : "\/Monitor.sysml"
+                                                        },
+                                                        "beginLine" : 381,
+                                                        "beginColumn" : 29,
+                                                        "endLine" : 381,
+                                                        "endColumn" : 61,
+                                                        "offset" : 19538,
+                                                        "length" : 33
+                                                      }
+                                                    },
+                                                    "resOpt" : {
+                                                      "type" : "None"
+                                                    },
+                                                    "typedOpt" : {
+                                                      "type" : "None"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "id" : {
+                                                "type" : "org.sireum.lang.ast.Id",
+                                                "value" : "Monitor_Mode",
+                                                "attr" : {
+                                                  "type" : "org.sireum.lang.ast.Attr",
+                                                  "posOpt" : {
+                                                    "type" : "Some",
+                                                    "value" : {
+                                                      "type" : "Position",
+                                                      "uriOpt" : {
+                                                        "type" : "Some",
+                                                        "value" : "\/Monitor.sysml"
+                                                      },
+                                                      "beginLine" : 381,
+                                                      "beginColumn" : 50,
+                                                      "endLine" : 381,
+                                                      "endColumn" : 61,
+                                                      "offset" : 19559,
+                                                      "length" : 12
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "targs" : [
+                                              ],
+                                              "attr" : {
+                                                "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                                "posOpt" : {
+                                                  "type" : "Some",
+                                                  "value" : {
+                                                    "type" : "Position",
+                                                    "uriOpt" : {
+                                                      "type" : "Some",
+                                                      "value" : "\/Monitor.sysml"
+                                                    },
+                                                    "beginLine" : 381,
+                                                    "beginColumn" : 29,
+                                                    "endLine" : 381,
+                                                    "endColumn" : 61,
+                                                    "offset" : 19538,
+                                                    "length" : 33
+                                                  }
+                                                },
+                                                "resOpt" : {
+                                                  "type" : "None"
+                                                },
+                                                "typedOpt" : {
+                                                  "type" : "None"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "id" : {
+                                            "type" : "org.sireum.lang.ast.Id",
+                                            "value" : "Normal_Monitor_Mode",
+                                            "attr" : {
+                                              "type" : "org.sireum.lang.ast.Attr",
+                                              "posOpt" : {
+                                                "type" : "Some",
+                                                "value" : {
+                                                  "type" : "Position",
+                                                  "uriOpt" : {
+                                                    "type" : "Some",
+                                                    "value" : "\/Monitor.sysml"
+                                                  },
+                                                  "beginLine" : 381,
+                                                  "beginColumn" : 63,
+                                                  "endLine" : 381,
+                                                  "endColumn" : 81,
+                                                  "offset" : 19572,
+                                                  "length" : 19
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "targs" : [
+                                          ],
+                                          "attr" : {
+                                            "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                            "posOpt" : {
+                                              "type" : "Some",
+                                              "value" : {
+                                                "type" : "Position",
+                                                "uriOpt" : {
+                                                  "type" : "Some",
+                                                  "value" : "\/Monitor.sysml"
+                                                },
+                                                "beginLine" : 381,
+                                                "beginColumn" : 29,
+                                                "endLine" : 381,
+                                                "endColumn" : 81,
+                                                "offset" : 19538,
+                                                "length" : 53
+                                              }
+                                            },
+                                            "resOpt" : {
+                                              "type" : "None"
+                                            },
+                                            "typedOpt" : {
+                                              "type" : "None"
                                             }
                                           }
                                         },
@@ -32206,173 +32398,9 @@
                                               "beginLine" : 381,
                                               "beginColumn" : 13,
                                               "endLine" : 381,
-                                              "endColumn" : 24,
-                                              "offset" : 19522,
-                                              "length" : 12
-                                            }
-                                          },
-                                          "resOpt" : {
-                                            "type" : "None"
-                                          },
-                                          "typedOpt" : {
-                                            "type" : "None"
-                                          }
-                                        }
-                                      },
-                                      "op" : "==",
-                                      "right" : {
-                                        "type" : "org.sireum.lang.ast.Exp.Select",
-                                        "receiverOpt" : {
-                                          "type" : "Some",
-                                          "value" : {
-                                            "type" : "org.sireum.lang.ast.Exp.Select",
-                                            "receiverOpt" : {
-                                              "type" : "Some",
-                                              "value" : {
-                                                "type" : "org.sireum.lang.ast.Exp.Ident",
-                                                "id" : {
-                                                  "type" : "org.sireum.lang.ast.Id",
-                                                  "value" : "Isolette_Data_Model",
-                                                  "attr" : {
-                                                    "type" : "org.sireum.lang.ast.Attr",
-                                                    "posOpt" : {
-                                                      "type" : "Some",
-                                                      "value" : {
-                                                        "type" : "Position",
-                                                        "uriOpt" : {
-                                                          "type" : "Some",
-                                                          "value" : "\/Monitor.sysml"
-                                                        },
-                                                        "beginLine" : 381,
-                                                        "beginColumn" : 29,
-                                                        "endLine" : 381,
-                                                        "endColumn" : 47,
-                                                        "offset" : 19538,
-                                                        "length" : 19
-                                                      }
-                                                    }
-                                                  }
-                                                },
-                                                "attr" : {
-                                                  "type" : "org.sireum.lang.ast.ResolvedAttr",
-                                                  "posOpt" : {
-                                                    "type" : "Some",
-                                                    "value" : {
-                                                      "type" : "Position",
-                                                      "uriOpt" : {
-                                                        "type" : "Some",
-                                                        "value" : "\/Monitor.sysml"
-                                                      },
-                                                      "beginLine" : 381,
-                                                      "beginColumn" : 29,
-                                                      "endLine" : 381,
-                                                      "endColumn" : 61,
-                                                      "offset" : 19538,
-                                                      "length" : 33
-                                                    }
-                                                  },
-                                                  "resOpt" : {
-                                                    "type" : "None"
-                                                  },
-                                                  "typedOpt" : {
-                                                    "type" : "None"
-                                                  }
-                                                }
-                                              }
-                                            },
-                                            "id" : {
-                                              "type" : "org.sireum.lang.ast.Id",
-                                              "value" : "Monitor_Mode",
-                                              "attr" : {
-                                                "type" : "org.sireum.lang.ast.Attr",
-                                                "posOpt" : {
-                                                  "type" : "Some",
-                                                  "value" : {
-                                                    "type" : "Position",
-                                                    "uriOpt" : {
-                                                      "type" : "Some",
-                                                      "value" : "\/Monitor.sysml"
-                                                    },
-                                                    "beginLine" : 381,
-                                                    "beginColumn" : 50,
-                                                    "endLine" : 381,
-                                                    "endColumn" : 61,
-                                                    "offset" : 19559,
-                                                    "length" : 12
-                                                  }
-                                                }
-                                              }
-                                            },
-                                            "targs" : [
-                                            ],
-                                            "attr" : {
-                                              "type" : "org.sireum.lang.ast.ResolvedAttr",
-                                              "posOpt" : {
-                                                "type" : "Some",
-                                                "value" : {
-                                                  "type" : "Position",
-                                                  "uriOpt" : {
-                                                    "type" : "Some",
-                                                    "value" : "\/Monitor.sysml"
-                                                  },
-                                                  "beginLine" : 381,
-                                                  "beginColumn" : 29,
-                                                  "endLine" : 381,
-                                                  "endColumn" : 61,
-                                                  "offset" : 19538,
-                                                  "length" : 33
-                                                }
-                                              },
-                                              "resOpt" : {
-                                                "type" : "None"
-                                              },
-                                              "typedOpt" : {
-                                                "type" : "None"
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "id" : {
-                                          "type" : "org.sireum.lang.ast.Id",
-                                          "value" : "Normal_Monitor_Mode",
-                                          "attr" : {
-                                            "type" : "org.sireum.lang.ast.Attr",
-                                            "posOpt" : {
-                                              "type" : "Some",
-                                              "value" : {
-                                                "type" : "Position",
-                                                "uriOpt" : {
-                                                  "type" : "Some",
-                                                  "value" : "\/Monitor.sysml"
-                                                },
-                                                "beginLine" : 381,
-                                                "beginColumn" : 63,
-                                                "endLine" : 381,
-                                                "endColumn" : 81,
-                                                "offset" : 19572,
-                                                "length" : 19
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "targs" : [
-                                        ],
-                                        "attr" : {
-                                          "type" : "org.sireum.lang.ast.ResolvedAttr",
-                                          "posOpt" : {
-                                            "type" : "Some",
-                                            "value" : {
-                                              "type" : "Position",
-                                              "uriOpt" : {
-                                                "type" : "Some",
-                                                "value" : "\/Monitor.sysml"
-                                              },
-                                              "beginLine" : 381,
-                                              "beginColumn" : 29,
-                                              "endLine" : 381,
                                               "endColumn" : 81,
-                                              "offset" : 19538,
-                                              "length" : 53
+                                              "offset" : 19522,
+                                              "length" : 69
                                             }
                                           },
                                           "resOpt" : {
@@ -32381,11 +32409,8 @@
                                           "typedOpt" : {
                                             "type" : "None"
                                           }
-                                        }
-                                      },
-                                      "attr" : {
-                                        "type" : "org.sireum.lang.ast.ResolvedAttr",
-                                        "posOpt" : {
+                                        },
+                                        "opPosOpt" : {
                                           "type" : "Some",
                                           "value" : {
                                             "type" : "Position",
@@ -32400,35 +32425,10 @@
                                             "offset" : 19522,
                                             "length" : 69
                                           }
-                                        },
-                                        "resOpt" : {
-                                          "type" : "None"
-                                        },
-                                        "typedOpt" : {
-                                          "type" : "None"
                                         }
                                       },
-                                      "opPosOpt" : {
-                                        "type" : "Some",
-                                        "value" : {
-                                          "type" : "Position",
-                                          "uriOpt" : {
-                                            "type" : "Some",
-                                            "value" : "\/Monitor.sysml"
-                                          },
-                                          "beginLine" : 381,
-                                          "beginColumn" : 13,
-                                          "endLine" : 381,
-                                          "endColumn" : 81,
-                                          "offset" : 19522,
-                                          "length" : 69
-                                        }
-                                      }
-                                    },
-                                    "op" : "&",
-                                    "right" : {
-                                      "type" : "org.sireum.lang.ast.Exp.Binary",
-                                      "left" : {
+                                      "op" : "&",
+                                      "right" : {
                                         "type" : "org.sireum.lang.ast.Exp.Binary",
                                         "left" : {
                                           "type" : "org.sireum.lang.ast.Exp.Select",
@@ -32755,7 +32755,159 @@
                                           }
                                         }
                                       },
-                                      "op" : "&",
+                                      "attr" : {
+                                        "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                        "posOpt" : {
+                                          "type" : "Some",
+                                          "value" : {
+                                            "type" : "Position",
+                                            "uriOpt" : {
+                                              "type" : "Some",
+                                              "value" : "\/Monitor.sysml"
+                                            },
+                                            "beginLine" : 381,
+                                            "beginColumn" : 13,
+                                            "endLine" : 383,
+                                            "endColumn" : 73,
+                                            "offset" : 19522,
+                                            "length" : 152
+                                          }
+                                        },
+                                        "resOpt" : {
+                                          "type" : "None"
+                                        },
+                                        "typedOpt" : {
+                                          "type" : "None"
+                                        }
+                                      },
+                                      "opPosOpt" : {
+                                        "type" : "Some",
+                                        "value" : {
+                                          "type" : "Position",
+                                          "uriOpt" : {
+                                            "type" : "Some",
+                                            "value" : "\/Monitor.sysml"
+                                          },
+                                          "beginLine" : 381,
+                                          "beginColumn" : 13,
+                                          "endLine" : 383,
+                                          "endColumn" : 73,
+                                          "offset" : 19522,
+                                          "length" : 152
+                                        }
+                                      }
+                                    },
+                                    "op" : "&",
+                                    "right" : {
+                                      "type" : "org.sireum.lang.ast.Exp.Binary",
+                                      "left" : {
+                                        "type" : "org.sireum.lang.ast.Exp.Select",
+                                        "receiverOpt" : {
+                                          "type" : "Some",
+                                          "value" : {
+                                            "type" : "org.sireum.lang.ast.Exp.Ident",
+                                            "id" : {
+                                              "type" : "org.sireum.lang.ast.Id",
+                                              "value" : "current_tempWstatus",
+                                              "attr" : {
+                                                "type" : "org.sireum.lang.ast.Attr",
+                                                "posOpt" : {
+                                                  "type" : "Some",
+                                                  "value" : {
+                                                    "type" : "Position",
+                                                    "uriOpt" : {
+                                                      "type" : "Some",
+                                                      "value" : "\/Monitor.sysml"
+                                                    },
+                                                    "beginLine" : 384,
+                                                    "beginColumn" : 7,
+                                                    "endLine" : 384,
+                                                    "endColumn" : 25,
+                                                    "offset" : 19685,
+                                                    "length" : 19
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "attr" : {
+                                              "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                              "posOpt" : {
+                                                "type" : "Some",
+                                                "value" : {
+                                                  "type" : "Position",
+                                                  "uriOpt" : {
+                                                    "type" : "Some",
+                                                    "value" : "\/Monitor.sysml"
+                                                  },
+                                                  "beginLine" : 384,
+                                                  "beginColumn" : 7,
+                                                  "endLine" : 384,
+                                                  "endColumn" : 25,
+                                                  "offset" : 19685,
+                                                  "length" : 19
+                                                }
+                                              },
+                                              "resOpt" : {
+                                                "type" : "None"
+                                              },
+                                              "typedOpt" : {
+                                                "type" : "None"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "id" : {
+                                          "type" : "org.sireum.lang.ast.Id",
+                                          "value" : "degrees",
+                                          "attr" : {
+                                            "type" : "org.sireum.lang.ast.Attr",
+                                            "posOpt" : {
+                                              "type" : "Some",
+                                              "value" : {
+                                                "type" : "Position",
+                                                "uriOpt" : {
+                                                  "type" : "Some",
+                                                  "value" : "\/Monitor.sysml"
+                                                },
+                                                "beginLine" : 384,
+                                                "beginColumn" : 27,
+                                                "endLine" : 384,
+                                                "endColumn" : 33,
+                                                "offset" : 19705,
+                                                "length" : 7
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "targs" : [
+                                        ],
+                                        "attr" : {
+                                          "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                          "posOpt" : {
+                                            "type" : "Some",
+                                            "value" : {
+                                              "type" : "Position",
+                                              "uriOpt" : {
+                                                "type" : "Some",
+                                                "value" : "\/Monitor.sysml"
+                                              },
+                                              "beginLine" : 384,
+                                              "beginColumn" : 7,
+                                              "endLine" : 384,
+                                              "endColumn" : 33,
+                                              "offset" : 19685,
+                                              "length" : 27
+                                            }
+                                          },
+                                          "resOpt" : {
+                                            "type" : "None"
+                                          },
+                                          "typedOpt" : {
+                                            "type" : "None"
+                                          }
+                                        }
+                                      },
+                                      "op" : "<=",
                                       "right" : {
                                         "type" : "org.sireum.lang.ast.Exp.Binary",
                                         "left" : {
@@ -32766,7 +32918,7 @@
                                               "type" : "org.sireum.lang.ast.Exp.Ident",
                                               "id" : {
                                                 "type" : "org.sireum.lang.ast.Id",
-                                                "value" : "current_tempWstatus",
+                                                "value" : "upper_alarm_temp",
                                                 "attr" : {
                                                   "type" : "org.sireum.lang.ast.Attr",
                                                   "posOpt" : {
@@ -32778,11 +32930,11 @@
                                                         "value" : "\/Monitor.sysml"
                                                       },
                                                       "beginLine" : 384,
-                                                      "beginColumn" : 7,
+                                                      "beginColumn" : 38,
                                                       "endLine" : 384,
-                                                      "endColumn" : 25,
-                                                      "offset" : 19685,
-                                                      "length" : 19
+                                                      "endColumn" : 53,
+                                                      "offset" : 19716,
+                                                      "length" : 16
                                                     }
                                                   }
                                                 }
@@ -32798,11 +32950,11 @@
                                                       "value" : "\/Monitor.sysml"
                                                     },
                                                     "beginLine" : 384,
-                                                    "beginColumn" : 7,
+                                                    "beginColumn" : 38,
                                                     "endLine" : 384,
-                                                    "endColumn" : 25,
-                                                    "offset" : 19685,
-                                                    "length" : 19
+                                                    "endColumn" : 53,
+                                                    "offset" : 19716,
+                                                    "length" : 16
                                                   }
                                                 },
                                                 "resOpt" : {
@@ -32828,10 +32980,10 @@
                                                     "value" : "\/Monitor.sysml"
                                                   },
                                                   "beginLine" : 384,
-                                                  "beginColumn" : 27,
+                                                  "beginColumn" : 55,
                                                   "endLine" : 384,
-                                                  "endColumn" : 33,
-                                                  "offset" : 19705,
+                                                  "endColumn" : 61,
+                                                  "offset" : 19733,
                                                   "length" : 7
                                                 }
                                               }
@@ -32850,11 +33002,11 @@
                                                   "value" : "\/Monitor.sysml"
                                                 },
                                                 "beginLine" : 384,
-                                                "beginColumn" : 7,
+                                                "beginColumn" : 38,
                                                 "endLine" : 384,
-                                                "endColumn" : 33,
-                                                "offset" : 19685,
-                                                "length" : 27
+                                                "endColumn" : 61,
+                                                "offset" : 19716,
+                                                "length" : 24
                                               }
                                             },
                                             "resOpt" : {
@@ -32865,142 +33017,12 @@
                                             }
                                           }
                                         },
-                                        "op" : "<=",
+                                        "op" : "-",
                                         "right" : {
-                                          "type" : "org.sireum.lang.ast.Exp.Binary",
-                                          "left" : {
-                                            "type" : "org.sireum.lang.ast.Exp.Select",
-                                            "receiverOpt" : {
-                                              "type" : "Some",
-                                              "value" : {
-                                                "type" : "org.sireum.lang.ast.Exp.Ident",
-                                                "id" : {
-                                                  "type" : "org.sireum.lang.ast.Id",
-                                                  "value" : "upper_alarm_temp",
-                                                  "attr" : {
-                                                    "type" : "org.sireum.lang.ast.Attr",
-                                                    "posOpt" : {
-                                                      "type" : "Some",
-                                                      "value" : {
-                                                        "type" : "Position",
-                                                        "uriOpt" : {
-                                                          "type" : "Some",
-                                                          "value" : "\/Monitor.sysml"
-                                                        },
-                                                        "beginLine" : 384,
-                                                        "beginColumn" : 38,
-                                                        "endLine" : 384,
-                                                        "endColumn" : 53,
-                                                        "offset" : 19716,
-                                                        "length" : 16
-                                                      }
-                                                    }
-                                                  }
-                                                },
-                                                "attr" : {
-                                                  "type" : "org.sireum.lang.ast.ResolvedAttr",
-                                                  "posOpt" : {
-                                                    "type" : "Some",
-                                                    "value" : {
-                                                      "type" : "Position",
-                                                      "uriOpt" : {
-                                                        "type" : "Some",
-                                                        "value" : "\/Monitor.sysml"
-                                                      },
-                                                      "beginLine" : 384,
-                                                      "beginColumn" : 38,
-                                                      "endLine" : 384,
-                                                      "endColumn" : 53,
-                                                      "offset" : 19716,
-                                                      "length" : 16
-                                                    }
-                                                  },
-                                                  "resOpt" : {
-                                                    "type" : "None"
-                                                  },
-                                                  "typedOpt" : {
-                                                    "type" : "None"
-                                                  }
-                                                }
-                                              }
-                                            },
-                                            "id" : {
-                                              "type" : "org.sireum.lang.ast.Id",
-                                              "value" : "degrees",
-                                              "attr" : {
-                                                "type" : "org.sireum.lang.ast.Attr",
-                                                "posOpt" : {
-                                                  "type" : "Some",
-                                                  "value" : {
-                                                    "type" : "Position",
-                                                    "uriOpt" : {
-                                                      "type" : "Some",
-                                                      "value" : "\/Monitor.sysml"
-                                                    },
-                                                    "beginLine" : 384,
-                                                    "beginColumn" : 55,
-                                                    "endLine" : 384,
-                                                    "endColumn" : 61,
-                                                    "offset" : 19733,
-                                                    "length" : 7
-                                                  }
-                                                }
-                                              }
-                                            },
-                                            "targs" : [
-                                            ],
-                                            "attr" : {
-                                              "type" : "org.sireum.lang.ast.ResolvedAttr",
-                                              "posOpt" : {
-                                                "type" : "Some",
-                                                "value" : {
-                                                  "type" : "Position",
-                                                  "uriOpt" : {
-                                                    "type" : "Some",
-                                                    "value" : "\/Monitor.sysml"
-                                                  },
-                                                  "beginLine" : 384,
-                                                  "beginColumn" : 38,
-                                                  "endLine" : 384,
-                                                  "endColumn" : 61,
-                                                  "offset" : 19716,
-                                                  "length" : 24
-                                                }
-                                              },
-                                              "resOpt" : {
-                                                "type" : "None"
-                                              },
-                                              "typedOpt" : {
-                                                "type" : "None"
-                                              }
-                                            }
-                                          },
-                                          "op" : "-",
-                                          "right" : {
-                                            "type" : "org.sireum.lang.ast.Exp.LitF32",
-                                            "value" : 0.5,
-                                            "attr" : {
-                                              "type" : "org.sireum.lang.ast.Attr",
-                                              "posOpt" : {
-                                                "type" : "Some",
-                                                "value" : {
-                                                  "type" : "Position",
-                                                  "uriOpt" : {
-                                                    "type" : "Some",
-                                                    "value" : "\/Monitor.sysml"
-                                                  },
-                                                  "beginLine" : 384,
-                                                  "beginColumn" : 65,
-                                                  "endLine" : 384,
-                                                  "endColumn" : 73,
-                                                  "offset" : 19743,
-                                                  "length" : 8
-                                                }
-                                              }
-                                            }
-                                          },
+                                          "type" : "org.sireum.lang.ast.Exp.LitF32",
+                                          "value" : 0.5,
                                           "attr" : {
-                                            "type" : "org.sireum.lang.ast.ResolvedAttr",
+                                            "type" : "org.sireum.lang.ast.Attr",
                                             "posOpt" : {
                                               "type" : "Some",
                                               "value" : {
@@ -33010,34 +33032,12 @@
                                                   "value" : "\/Monitor.sysml"
                                                 },
                                                 "beginLine" : 384,
-                                                "beginColumn" : 38,
+                                                "beginColumn" : 65,
                                                 "endLine" : 384,
                                                 "endColumn" : 73,
-                                                "offset" : 19716,
-                                                "length" : 35
+                                                "offset" : 19743,
+                                                "length" : 8
                                               }
-                                            },
-                                            "resOpt" : {
-                                              "type" : "None"
-                                            },
-                                            "typedOpt" : {
-                                              "type" : "None"
-                                            }
-                                          },
-                                          "opPosOpt" : {
-                                            "type" : "Some",
-                                            "value" : {
-                                              "type" : "Position",
-                                              "uriOpt" : {
-                                                "type" : "Some",
-                                                "value" : "\/Monitor.sysml"
-                                              },
-                                              "beginLine" : 384,
-                                              "beginColumn" : 38,
-                                              "endLine" : 384,
-                                              "endColumn" : 73,
-                                              "offset" : 19716,
-                                              "length" : 35
                                             }
                                           }
                                         },
@@ -33052,11 +33052,11 @@
                                                 "value" : "\/Monitor.sysml"
                                               },
                                               "beginLine" : 384,
-                                              "beginColumn" : 7,
+                                              "beginColumn" : 38,
                                               "endLine" : 384,
                                               "endColumn" : 73,
-                                              "offset" : 19685,
-                                              "length" : 66
+                                              "offset" : 19716,
+                                              "length" : 35
                                             }
                                           },
                                           "resOpt" : {
@@ -33075,11 +33075,11 @@
                                               "value" : "\/Monitor.sysml"
                                             },
                                             "beginLine" : 384,
-                                            "beginColumn" : 7,
+                                            "beginColumn" : 38,
                                             "endLine" : 384,
                                             "endColumn" : 73,
-                                            "offset" : 19685,
-                                            "length" : 66
+                                            "offset" : 19716,
+                                            "length" : 35
                                           }
                                         }
                                       },
@@ -33093,12 +33093,12 @@
                                               "type" : "Some",
                                               "value" : "\/Monitor.sysml"
                                             },
-                                            "beginLine" : 383,
+                                            "beginLine" : 384,
                                             "beginColumn" : 7,
                                             "endLine" : 384,
                                             "endColumn" : 73,
-                                            "offset" : 19608,
-                                            "length" : 143
+                                            "offset" : 19685,
+                                            "length" : 66
                                           }
                                         },
                                         "resOpt" : {
@@ -33116,12 +33116,12 @@
                                             "type" : "Some",
                                             "value" : "\/Monitor.sysml"
                                           },
-                                          "beginLine" : 383,
+                                          "beginLine" : 384,
                                           "beginColumn" : 7,
                                           "endLine" : 384,
                                           "endColumn" : 73,
-                                          "offset" : 19608,
-                                          "length" : 143
+                                          "offset" : 19685,
+                                          "length" : 66
                                         }
                                       }
                                     },
